@@ -16,9 +16,10 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 @TeleOp(name = "BulldogTechTeleOp")
 public class BulldogTechTeleOp extends LinearOpMode {
 
-    private DcMotorEx FL, FR, BL, BR, LS, arm;
+    private DcMotorEx FL, FR, BL, BR;
+            //LS, arm;
     //private Servo RE, LE, LW, RW;
-    private CRServo claw;
+    //private CRServo claw;
     // private Servo LO, RO;
 
     private static boolean isGoing = false;
@@ -32,7 +33,7 @@ public class BulldogTechTeleOp extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
         //servos
-        claw = hardwareMap.get(CRServo.class, "claw");
+       // claw = hardwareMap.get(CRServo.class, "claw");
 
         //CRservos
         /*
@@ -44,8 +45,8 @@ public class BulldogTechTeleOp extends LinearOpMode {
         FR = hardwareMap.get(DcMotorEx.class, "rightFront");
         BL = hardwareMap.get(DcMotorEx.class, "leftRear");
         BR = hardwareMap.get(DcMotorEx.class, "rightRear");
-        LS = hardwareMap.get(DcMotorEx.class, "LS");
-        arm = hardwareMap.get(DcMotorEx.class, "arm");
+        //LS = hardwareMap.get(DcMotorEx.class, "LS");
+        //arm = hardwareMap.get(DcMotorEx.class, "arm");
 
 
         // normal mode
@@ -63,22 +64,22 @@ public class BulldogTechTeleOp extends LinearOpMode {
         BL.setDirection(DcMotorSimple.Direction.REVERSE);
         BR.setDirection(DcMotorSimple.Direction.FORWARD);
 
-        LS.setDirection(DcMotorSimple.Direction.REVERSE);
-        arm.setDirection(DcMotorSimple.Direction.FORWARD);
+        //LS.setDirection(DcMotorSimple.Direction.REVERSE);
+        //arm.setDirection(DcMotorSimple.Direction.FORWARD);
 
         FL.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         FR.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         BL.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         BR.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        LS.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        arm.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        //LS.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        //arm.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         //arm.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        arm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        //arm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         FL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         FR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         BL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         BR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        LS.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        //LS.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         //System.out.println(claw.getPosition());
 
         waitForStart();
@@ -162,6 +163,7 @@ public class BulldogTechTeleOp extends LinearOpMode {
                     LS.setMode(DcMotor.RunMode.RUN_TO_POSITION);
                 }
                 */
+                /*
                 if (gamepad1.b) {
                     arm.setPower(.4);
 
@@ -197,9 +199,11 @@ public class BulldogTechTeleOp extends LinearOpMode {
                     LS.setPower(0);
                 }
 
+                 */
 
 
-                /*if (gamepad1.b) {
+
+                /* if (gamepad1.b) {
                     Intake.setPower(.86);
                 }
 
@@ -361,5 +365,7 @@ public class BulldogTechTeleOp extends LinearOpMode {
         }
     }
 }
+
+
 
 
